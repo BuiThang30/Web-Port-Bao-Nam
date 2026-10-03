@@ -1,0 +1,216 @@
+.robo-container {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+/* ================= TABS ================= */
+.robo-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 14px 0;
+    border-top: 3px solid #303030;
+    border-bottom: 3px solid #303030;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.robo-tabs::-webkit-scrollbar { display: none; }
+
+.robo-tab {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    white-space: nowrap;
+
+    /* Tab thường: chữ đặc */
+    color: #303030;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #303030;
+    font-family: "1FTV Avilock", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83.979%;
+    text-transform: uppercase;
+
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover: chữ chuyển rỗng (chỉ còn viền) và nhích lên nhẹ */
+.robo-tab:hover {
+    color: transparent;
+    transform: translateY(-3px);
+}
+
+/* Tab đang chọn: chữ rỗng, chỉ có viền */
+.robo-tab.active {
+    color: transparent;
+    transform: none;
+    cursor: default;
+}
+
+/* ================= PANEL ================= */
+.robo-panel {
+    display: none;
+    grid-template-columns: 4fr 3fr;
+    gap: 22px;
+    align-items: start;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid #303030;
+}
+
+.robo-panel.active {
+    display: grid;
+}
+
+/* ================= GALLERY: ẢNH + CHẤM ================= */
+.robo-gallery {
+    min-width: 0;
+}
+
+/* Ô ảnh: mỗi ảnh chiếm trọn 1 khung, cuộn khựng từng ảnh */
+.robo-image {
+    width: 100%;
+    height: 520px;
+    min-width: 0;
+    background-color: #D9D9D9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    /* ẩn thanh cuộn, đã có chấm điều hướng */
+    scrollbar-width: none;
+}
+
+.robo-image::-webkit-scrollbar { display: none; }
+
+/* Ảnh nằm giữa khung, giữ nguyên tỉ lệ gốc (16:9, 9:16, 4:3, 3:4...) */
+.robo-image img {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Chấm điều hướng */
+.robo-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.robo-dot {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #303030;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.robo-dot.active { background: #303030; }
+
+/* ================= TEXT BÊN PHẢI ================= */
+.robo-info {
+    color: #303030;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 138.368%;
+}
+
+.robo-info p {
+    margin: 0;
+}
+
+.robo-info strong {
+    font-weight: 700;
+}
+
+.robo-info .robo-subhead {
+    margin-top: 1.4em;
+}
+
+.robo-info ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Màn hình Desktop vừa (max-width: 1440px) */
+@media (max-width: 1440px) {
+    .robo-container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .robo-tab { font-size: 36px; }
+    .robo-image { height: 480px; }
+}
+
+/* Màn hình Laptop nhỏ & Tablet ngang (max-width: 1100px) */
+@media (max-width: 1100px) {
+    .robo-tab { font-size: 30px; }
+    .robo-tabs { gap: 28px; }
+    .robo-image { height: 400px; }
+}
+
+/* Màn hình Tablet dọc (max-width: 900px) */
+@media (max-width: 900px) {
+    /* Đưa ảnh và chữ nằm dọc (1 cột) */
+    .robo-panel.active {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .robo-tab { font-size: 24px; }
+    .robo-tabs {
+        justify-content: flex-start;
+        gap: 24px;
+    }
+    .robo-image { height: 320px; }
+}
+
+/* Màn hình Điện thoại lớn (max-width: 700px) */
+@media (max-width: 700px) {
+    .robo-container {
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+    .robo-tab { font-size: 20px; }
+    .robo-tabs {
+        gap: 16px;
+        padding: 10px 0;
+    }
+    .robo-image { height: 260px; }
+}
+
+/* Màn hình Điện thoại nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .robo-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    .robo-tab { font-size: 16px; }
+    .robo-tabs { gap: 12px; }
+    .robo-image { height: 200px; }
+    .robo-dot { width: 12px; height: 12px; }
+
+    /* Thu nhỏ chữ nội dung trên điện thoại để dễ đọc hơn */
+    .robo-info { font-size: 14px; }
+    .robo-panel { margin-top: 12px; }
+}

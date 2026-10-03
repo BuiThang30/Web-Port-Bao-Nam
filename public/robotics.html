@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics & Websites Collection - Bao Nam's Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="robotics.css">
+</head>
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <div class="container-1440 robo-container">
+
+        <!-- ============ TABS ============ -->
+        <div class="robo-tabs">
+            <button class="robo-tab active" data-target="robo-1">VSAR</button>
+            <button class="robo-tab" data-target="robo-2">VEX IQ</button>
+            <button class="robo-tab" data-target="robo-3">TEKMONK</button>
+            <button class="robo-tab" data-target="robo-4">VSIC</button>
+            <button class="robo-tab" data-target="robo-5">WICO</button>
+            <button class="robo-tab" data-target="robo-6">ICAN</button>
+            <button class="robo-tab" data-target="robo-7">PERSONAL PROJECT</button>
+        </div>
+
+        <!-- ============ 1. VSAR ============ -->
+        <div class="robo-panel active" id="robo-1">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="1"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> Teleoperated Seed-Planting Assistive Robot [Robotics]</p>
+                <p><strong>Badge Tag:</strong> VSAR 2024 Official Entry</p>
+                <p><strong>Your Role:</strong> Team Leader &amp; Mechanical Lead</p>
+                <p><strong>Tech Stack / Hardware:</strong> Arduino UNO/DC Gear Motors</p>
+                <p><strong>Technical Summary:</strong> Designed and built a teleoperated agricultural robot engineered for precision seed planting during the VSAR 2024 competition. Served as my foundational milestone in robotics, integrating custom mechanical assembly with microcontrollers for responsive remote control.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Ensuring mechanical stability and precise seed actuation on uneven competition terrain during my first robotics development cycle.</li>
+                    <li><strong>Solution:</strong> Simplified chassis geometry to reduce structural flex and tuned PWM motor driver signals to ensure smooth, predictable joystick maneuvering under match pressure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 2. VEX IQ ============ -->
+        <div class="robo-panel" id="robo-2">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="2"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> VEX IQ High-Performance Competitive Robot (Team 25812M) <strong>[Competitive Robotics]</strong></p>
+                <p><strong>Badge Tag:</strong> VEX Robotics World Championship Entry (Dallas, TX)</p>
+                <p><strong>Your Role:</strong> Mechanical Engineer &amp; Logistics Lead</p>
+                <p><strong>Tech Stack / Hardware:</strong> VEX IQ Robotics Platform | VEX Smart Motors &amp; Sensors | Mechanical Sub-assemblies | Competition Pit Logistics</p>
+                <p><strong>Technical Summary:</strong> Engineered and optimized a high-precision VEX IQ robot for international competition at the VEX Robotics World Championship in Dallas, Texas. Managed mechanical sub-assembly integrity, structural compliance, and team pit logistics while competing alongside over 400 top-tier global teams.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Ensuring mechanical stability, structural alignment, and strict sizing/weight compliance across intense multi-match tournament schedules under severe time pressure.</li>
+                    <li><strong>Solution:</strong> Designed modular sub-assemblies and established a rigorous pre-match inspection protocol, allowing rapid hardware diagnostics and pit-stop repairs within tight match windows.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 3. TEKMONK ============ -->
+        <div class="robo-panel" id="robo-3">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="3"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> AI-Assisted Travel &amp; Cultural Discovery Platform [Software &amp; Web]</p>
+                <p><strong>Badge Tag:</strong> TekMonk Coding Olympiad Entry</p>
+                <p><strong>Your Role:</strong> Data Architect &amp; Python Developer</p>
+                <p><strong>Tech Stack / Hardware:</strong> Python 3 | Android APK (Python-to-Android) | Buildozer / Kivy</p>
+                <p><strong>Technical Summary:</strong> Engineered a multi-functional Python application delivering personalized travel itineraries and interactive cultural insights. Built an automated data pipeline to scrape, clean, and validate large-scale web datasets for high-fidelity recommendations.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Processing and validating unstructured multi-source web data without degrading application responsiveness.</li>
+                    <li><strong>Solution:</strong> Designed modular Python data-cleansing pipelines and optimized indexing structures, ensuring fast retrieval times and clean data delivery during live judging at TekMonk 2026.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 4. VSIC ============ -->
+        <div class="robo-panel" id="robo-4">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="4"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> Autonomous Indoor Air Quality Monitoring &amp; Purification Robot [Robotics &amp; Web IoT]</p>
+                <p><strong>Badge Tag:</strong> Merit Award (Sustainable Design) — VSIC</p>
+                <p><strong>Your Role:</strong> Team Leader &amp; R&amp;D Lead Engineer</p>
+                <p><strong>Tech Stack / Hardware:</strong> Microcontrollers (ESP32) | IoT Air Sensors (PM2.5/Gas/Temp) | Filtration &amp; Humidification Modules | Web Control Dashboard | Embedded C++</p>
+                <p><strong>Technical Summary:</strong> Led the end-to-end development of a dual-mode robotic system designed to monitor real-time indoor air quality metrics and perform active purification via integrated filtration and humidification units. Developed a web application enabling real-time environmental telemetry monitoring and remote control, paired with an autonomous purification loop based on sensor thresholds.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Maintaining reliable low-latency synchronization between multi-sensor hardware readouts, filtration motor actuation, and the live web control interface.</li>
+                    <li><strong>Solution:</strong> Implemented an event-driven firmware architecture paired with lightweight HTTP/WebSocket telemetry protocols, ensuring seamless switching between autonomous sensor-driven routines and real-time web control overrides.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 5. WICO ============ -->
+        <div class="robo-panel" id="robo-5">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="5"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> Urban Trash Can [Robotics &amp; Web IoT]</p>
+                <p><strong>Badge Tag:</strong> Gold Award — 15th WICO Seoul 2026</p>
+                <p><strong>Your Role:</strong> Team Leader &amp; Lead Systems Architect</p>
+                <p><strong>Tech Stack / Hardware:</strong> Microcontrollers (ESP32) | Fill-Level &amp; Distance Sensors | Automated Actuators | Web Monitoring Dashboard | Alerting System (Webhooks/Notifications) | Embedded C++</p>
+                <p><strong>Technical Summary:</strong> Conceptualized and engineered an IoT-enabled smart waste management bin designed to modernize sanitation and maintenance efficiency in dense urban environments. Integrated automated bin mechanisms with a central web dashboard that tracks real-time fill capacity, telemetry data, and dispatches automated alerts to both city operators and end-users.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Maintaining reliable real-time sensor telemetry and triggering instant web alerts under varying urban connectivity conditions while preserving low power consumption.</li>
+                    <li><strong>Solution:</strong> Implemented event-driven microcontroller sleep/wake routines combined with lightweight web socket data transmission, ensuring instant operator alerts upon reaching fill thresholds with minimal power draw.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 6. ICAN ============ -->
+        <div class="robo-panel" id="robo-6">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="6"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> ZenSleep: AI-Powered Modular Sleep-Tracking System [Robotics &amp; Web IoT]</p>
+                <p><strong>Badge Tag:</strong> Gold Award — iCAN Canada 2026</p>
+                <p><strong>Your Role:</strong> Team Leader &amp; Lead Product Architect</p>
+                <p><strong>Tech Stack / Hardware:</strong> Embedded Physiological Sensors | AI/ML Analytics Microcontrollers | Web Analytics Dashboard | Real-Time Telemetry | Health Alerting Engine</p>
+                <p><strong>Technical Summary:</strong> Conceived and led the development of ZenSleep, a non-intrusive, modular hardware-software ecosystem that transforms any standard pillow into an intelligent sleep monitor. Coupled the physical sensor module with a web-based health platform that processes sleep metrics, delivers AI-powered pattern analysis, and generates real-time health alerts for anomalous vitals.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Capturing high-fidelity physiological data non-intrusively across varying pillow fabrics, densities, and sleeping postures.</li>
+                    <li><strong>Solution:</strong> Engineered a flexible, modular sensor architecture paired with adaptive signal-filtering algorithms, preserving user comfort while streaming clean telemetry to the web analytics engine.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ 7. PERSONAL PROJECT ============ -->
+        <div class="robo-panel" id="robo-7">
+            <div class="robo-gallery">
+                <div class="robo-image" data-gallery="7"></div>
+                <div class="robo-dots"></div>
+            </div>
+            <div class="robo-info">
+                <p><strong>Project Title:</strong> BotScavenger: Autonomous Environmental Waste Collection Robot</p>
+                <p><strong>Badge Tag:</strong> Independent R&amp;D Project</p>
+                <p><strong>Your Role:</strong> Creator &amp; Lead Systems Engineer</p>
+                <p><strong>Tech Stack / Hardware:</strong> Autonomous Navigation | Microcontrollers / Single Board Computers | Custom Mechanical Actuators | Web Telemetry &amp; Control Portal | Embedded C++ / Python</p>
+                <p><strong>Technical Summary:</strong> Conceived and built "BotScavenger," an autonomous robotic platform engineered to streamline environmental waste collection in public and outdoor spaces. Developed custom mechanical harvesting mechanisms paired with a web application for real-time telemetry monitoring, system state inspection, and manual override control.</p>
+
+                <p class="robo-subhead"><strong>Technical Challenges &amp; Solutions:</strong></p>
+                <ul>
+                    <li><strong>Challenge:</strong> Maintaining reliable low-latency web telemetry and control response during outdoor field operations in variable network conditions.</li>
+                    <li><strong>Solution:</strong> Engineered a lightweight, asynchronous communications layer between the onboard controller and web portal, allowing seamless toggling between autonomous navigation routines and web manual overrides.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="robotics-gallery.js"></script>
+</body>
+</html>

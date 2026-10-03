@@ -1,0 +1,10 @@
+.slideshow-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

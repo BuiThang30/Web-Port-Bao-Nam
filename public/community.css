@@ -1,0 +1,141 @@
+.community-container {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+/* Đường kẻ trên cùng */
+.community-container .community-row:first-child {
+    border-top: 3px solid #303030;
+}
+
+/* Mỗi hàng: 2 cột + đường kẻ dưới */
+.community-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: start;
+    padding: 30px 0;
+    border-bottom: 3px solid #303030;
+}
+
+.community-card {
+    min-width: 0;
+}
+
+/* ================= GALLERY: ẢNH + CHẤM ================= */
+
+/* Khung xám giữ tỉ lệ 780:462 */
+.community-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 780 / 462;
+    background-color: #D9D9D9;
+    overflow: hidden;
+}
+
+/* Vùng cuộn phủ kín khung: mỗi ảnh chiếm trọn 1 khung, cuộn khựng từng ảnh */
+.community-scroll {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;          /* ẩn thanh cuộn, đã có chấm */
+}
+
+.community-scroll::-webkit-scrollbar { display: none; }
+
+/* Ảnh nằm giữa khung, giữ nguyên tỉ lệ gốc (16:9, 9:16, 4:3, 3:4...) */
+.community-scroll img {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Chấm điều hướng */
+.community-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.community-dot {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #303030;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.community-dot.active { background: #303030; }
+
+/* ================= CHỮ ================= */
+
+/* Tiêu đề */
+.community-title {
+    color: #303030;
+    font-family: "1FTV Avilock", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 12px 0 0 0;
+}
+
+/* Ngày tháng (in đậm) */
+.community-date {
+    color: #303030;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 6px 0 10px 0;
+}
+
+/* Đoạn mô tả */
+.community-desc {
+    color: #303030;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+    .community-row { gap: 40px; }
+    .community-title { font-size: 32px; }
+    .community-date,
+    .community-desc { font-size: 17px; }
+}
+
+@media (max-width: 900px) {
+    .community-row {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .community-title { font-size: 26px; }
+    .community-date,
+    .community-desc { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+    .community-dot { width: 12px; height: 12px; }
+}

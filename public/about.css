@@ -1,0 +1,219 @@
+.title-font {
+    font-family: '1FTV Avilock', sans-serif;
+}
+
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 616px;
+    margin: 40px 0;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+.layer {
+    position: absolute;
+    background: transparent;
+}
+
+.layer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.layer-1 {
+    top: 0;
+    left: 0;
+    width: 447px;
+    height: auto;
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+    z-index: 1;
+}
+
+.layer-2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 778px;
+    z-index: 2;
+}
+
+.layer-3 {
+    bottom: 0;
+    right: 0;
+    width: 594px;
+    height: auto;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+.layer-3 .text-overlay {
+    position: static;
+}
+
+.interest-section {
+    padding: 60px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.small-gear {
+    width: 123px;
+    transform: rotate(43.577deg);
+    aspect-ratio: 123/155;
+}
+
+.section-heading h1 {
+    color: #303030;
+    font-family: '1FTV Avilock', sans-serif;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83.979%;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.interest-card h3 {
+    color: #303030;
+    font-family: '1FTV Avilock', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 83.979%;
+    margin-bottom: 15px;
+}
+
+.interest-card p {
+    color: #303030;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 25px;
+    min-height: 120px;
+}
+
+.gray-box {
+    width: 100%;
+    height: 250px;
+    background-color: #D9D9D9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Màn hình Desktop vừa (max-width: 1440px) */
+@media (max-width: 1440px) {
+    .section-heading h1 { font-size: 100px; }
+    .small-gear { width: 100px; }
+    .interest-grid { gap: 30px; }
+    
+    /* Thu nhỏ các layer và chiều cao hero */
+    .about-hero { height: 500px; }
+    .layer-1 { width: 360px; }
+    .layer-2 { width: 600px; }
+    .layer-3 { width: 450px; }
+}
+
+/* Màn hình Laptop nhỏ & Tablet ngang (max-width: 1100px) */
+@media (max-width: 1100px) {
+    .section-heading h1 { font-size: 70px; }
+    .small-gear { width: 80px; }
+    
+    /* Chuyển grid 3 cột thành 2 cột */
+    .interest-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .interest-card h3 { font-size: 32px; }
+    
+    /* Tiếp tục thu nhỏ layer */
+    .about-hero { height: 420px; }
+    .layer-1 { width: 280px; }
+    .layer-2 { width: 500px; }
+    .layer-3 { width: 360px; }
+}
+
+/* Màn hình Tablet dọc (max-width: 900px) */
+@media (max-width: 900px) {
+    .section-heading { margin-bottom: 30px; gap: 15px; }
+    .section-heading h1 { font-size: 50px; }
+    .small-gear { width: 60px; }
+    
+    /* Chuyển về 1 cột */
+    .interest-grid { grid-template-columns: 1fr; }
+    .interest-card p { min-height: auto; margin-bottom: 15px; }
+    
+    /* Định dạng lại Hero Section: Gỡ absolute, xếp dọc các layer */
+    .about-hero {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .layer {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100%;
+        max-width: 500px; /* Giới hạn chiều rộng tối đa */
+        border: 3px solid #000; /* Hiển thị viền đồng đều khi xếp dọc */
+    }
+    
+    .text-overlay { font-size: 24px; top: 10px; left: 10px; }
+}
+
+/* Màn hình Điện thoại lớn (max-width: 700px) */
+@media (max-width: 700px) {
+    .interest-section { padding: 40px 0; }
+    .section-heading h1 { font-size: 40px; }
+    .small-gear { width: 50px; }
+    .interest-card h3 { font-size: 28px; }
+    
+    .gray-box { height: 200px; }
+}
+
+/* Màn hình Điện thoại nhỏ (max-width: 480px) */
+@media (max-width: 480px) {
+    .section-heading h1 { font-size: 32px; }
+    .small-gear { width: 40px; }
+    .section-heading { gap: 10px; }
+    
+    .interest-card h3 { font-size: 24px; }
+    .interest-card p { font-size: 14px; }
+    
+    .text-overlay { font-size: 18px; }
+}
