@@ -70,6 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 4. Trang Robotics: chuyển tab  <-- DÒNG BỊ THIẾU
     initRoboticsPage();
+    // ---> BẮT ĐẦU THÊM ĐOẠN NÀY VÀO ĐỂ CHẠY SLIDER PHẦN INTEREST <---
+    const interestSliders = document.querySelectorAll(".interest-slider");
+    interestSliders.forEach(slider => {
+        const images = slider.querySelectorAll("img");
+        if (images.length <= 1) return; // Nếu có từ 1 ảnh trở xuống thì không chạy slider
+
+        let currentIndex = 0;
+        // Cứ mỗi 3.5 giây sẽ chuyển sang ảnh tiếp theo
+        setInterval(() => {
+            images[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add("active");
+        }, 3500);
+    });
 });
 
 /* =====================================================
@@ -137,4 +151,22 @@ function initRoboticsPage() {
             if (target) target.classList.add("active");
         });
     });
+    // ---> BẮT ĐẦU ĐOẠN CODE THÊM MỚI Ở ĐÂY <---
+    // Kiểm tra xem trên thanh địa chỉ có chứa ID dạng #robo-1, #robo-2... không
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1); // Cắt bỏ dấu # để lấy 'robo-1'
+        const targetTabBtn = document.querySelector(`.robo-tab[data-target="${targetId}"]`);
+        
+        if (targetTabBtn) {
+            // Tự động mô phỏng thao tác click chuột vào tab đó
+            targetTabBtn.click(); 
+            
+            // Cuộn trang mượt mà xuống khu vực hiển thị
+            setTimeout(() => {
+                const container = document.querySelector('.robo-container') || targetTabBtn;
+                container.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    }
+    // ---> KẾT THÚC ĐOẠN CODE THÊM MỚI <---
 }

@@ -144,6 +144,8 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: grayscale(100%); /* Mặc định ảnh ở ngoài là đen trắng */
+    transition: filter 0.3s ease; /* Tạo hiệu ứng đổi màu mượt mà */
 }
 
 .img-box.photo { height: 420px; }
@@ -259,12 +261,24 @@
 .activity-card .card-title { margin-top: 20px; }
 
 /* ================= POPUP ================= */
+/* ================= POPUP ================= */
 [data-popup] {
     cursor: pointer;
-    transition: transform 0.25s ease;
+    padding: 12px; /* Tạo đệm xung quanh để khi đổi màu nền đậm nhìn không bị dính sát lề */
+    border-radius: 8px; /* Bo nhẹ góc thẻ */
+    transition: transform 0.25s ease, background-color 0.3s ease; /* Chuyển động mượt */
 }
+
+/* Khi DI CHUỘT vào thẻ bất kỳ ngoài màn hình: */
 [data-popup]:hover {
     transform: translateY(-4px);
+    background-color: #E2DDD3; /* Đổi nền đằng sau thẻ sang màu đậm hơn tông kem hiện tại */
+}
+
+/* Khi DI CHUỘT vào thẻ: Ảnh bên trong chuyển từ ĐEN TRẮNG sang CÓ MÀU */
+[data-popup]:hover .img-box img,
+[data-popup]:hover img {
+    filter: grayscale(0%);
 }
 
 body.popup-lock { overflow: hidden; }

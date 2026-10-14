@@ -29,7 +29,11 @@
     position: relative;
     width: 100%;
     aspect-ratio: 780 / 462;
-    background-color: #D9D9D9;
+     border-top: 3px solid #303030;
+    border-bottom: 3px solid #303030;
+    border-right: 3px solid #303030;
+    border-left: 3px solid #303030;
+    background-color: transparent;
     overflow: hidden;
 }
 

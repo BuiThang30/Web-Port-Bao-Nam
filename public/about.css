@@ -2,71 +2,115 @@
     font-family: '1FTV Avilock', sans-serif;
 }
 
+/* --- Khung Hero chứa toàn bộ phần About Me --- */
 .about-hero {
+    display: flex;
+    justify-content: space-between; /* Đẩy 2 khung text sang 2 bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
     position: relative;
     width: 100%;
-    height: 616px;
+    height: 616px; /* Cố định chiều cao chuẩn theo Figma */
     margin: 40px 0;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid #000;
+    border-top: 3px solid #303030;
+    border-bottom: 3px solid #303030;
 }
 
-.layer {
-    position: absolute;
-    background: transparent;
+/* --- Đồng nhất Font chữ & Kích thước chuẩn STEM --- */
+.about-title {
+    font-family: '1FTV Avilock', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #303030;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    line-height: 1;
 }
 
-.layer img {
-    width: 100%;
-    height: auto;
-    display: block;
+.about-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; /* Đồng nhất 15px giống các thẻ STEM */
+    font-weight: 400;
+    line-height: 1.45;
+    color: #303030;
+    margin: 0;
+    text-align: justify;
 }
 
-.text-overlay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
+/* --- Layer 1: Ô vuông góc trên bên trái --- */
 .layer-1 {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 447px;
-    height: auto;
-    border-bottom: 3px solid #000;
-    border-right: 3px solid #000;
-    border-left: 3px solid #000;
+    width: 550px;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #303030;
+    border-right: 3px solid #303030;
+    border-left: 3px solid #303030;
+    background: #FFFFFF;
     z-index: 1;
 }
 
+/* --- Layer 2: Bánh răng xám ở chính giữa phía sau --- */
 .layer-2 {
+    position: absolute;
     top: 50%;
-    left: 50%;
+    left: 47.5%;
     transform: translate(-50%, -50%);
-    width: 778px;
     z-index: 2;
-}
-
-.layer-3 {
-    bottom: 0;
-    right: 0;
-    width: 594px;
-    height: auto;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    border-left: 3px solid #000;
+    width: 500px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 4;
 }
 
-.layer-3 .text-overlay {
-    position: static;
+.layer-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: rotate(45deg);
 }
 
+/* --- Layer Portrait: LỚP TRÊN CÙNG chứa ảnh người to đùng --- */
+.layer-portrait {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    transform: translateX(-50%);
+    height: 650px; /* Chiều cao ảnh người trùm sát viền */
+    z-index: 3; /* Lớp cao nhất đè lên bánh răng và mép ô chữ */
+    pointer-events: none;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer-portrait img {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* --- Layer 3: Ô vuông góc dưới bên phải --- */
+.layer-3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 550px;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    border-top: 3px solid #303030;
+    border-left: 3px solid #303030;
+    border-right: 3px solid #303030;
+    background: #FFFFFF;
+    z-index: 1;
+    display: block;
+}
+
+/* --- SECTION INTEREST --- */
 .interest-section {
     padding: 60px 0;
 }
@@ -80,8 +124,7 @@
 
 .small-gear {
     width: 123px;
-    transform: rotate(43.577deg);
-    aspect-ratio: 123/155;
+    aspect-ratio: 123/90;
 }
 
 .section-heading h1 {
@@ -121,57 +164,55 @@
     min-height: 120px;
 }
 
-.gray-box {
+/* --- Khung Slider cho phần Interest --- */
+.interest-slider {
+    position: relative;
     width: 100%;
     height: 250px;
-    background-color: #D9D9D9;
+    background-color: transparent; /* Dùng màu nền tối (hoặc #F5F1E8 nếu thích nền kem) để lấp đầy khoảng trống */
+    border: 3px solid #303030;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interest-slider img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Giữ nguyên tỉ lệ gốc của ảnh, không bị cắt xén hay bóp méo */
+    opacity: 0;        
+    transition: opacity 1s ease-in-out; 
+}
+
+/* Ảnh mang class .active sẽ hiện rõ ở chính giữa khung */
+.interest-slider img.active {
+    opacity: 1;
 }
 
 /* ================= RESPONSIVE ================= */
-
-/* Màn hình Desktop vừa (max-width: 1440px) */
 @media (max-width: 1440px) {
     .section-heading h1 { font-size: 100px; }
     .small-gear { width: 100px; }
     .interest-grid { gap: 30px; }
-    
-    /* Thu nhỏ các layer và chiều cao hero */
-    .about-hero { height: 500px; }
-    .layer-1 { width: 360px; }
-    .layer-2 { width: 600px; }
-    .layer-3 { width: 450px; }
 }
 
-/* Màn hình Laptop nhỏ & Tablet ngang (max-width: 1100px) */
 @media (max-width: 1100px) {
     .section-heading h1 { font-size: 70px; }
     .small-gear { width: 80px; }
-    
-    /* Chuyển grid 3 cột thành 2 cột */
-    .interest-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    
+    .interest-grid { grid-template-columns: repeat(2, 1fr); }
     .interest-card h3 { font-size: 32px; }
-    
-    /* Tiếp tục thu nhỏ layer */
-    .about-hero { height: 420px; }
-    .layer-1 { width: 280px; }
-    .layer-2 { width: 500px; }
-    .layer-3 { width: 360px; }
 }
 
-/* Màn hình Tablet dọc (max-width: 900px) */
 @media (max-width: 900px) {
     .section-heading { margin-bottom: 30px; gap: 15px; }
     .section-heading h1 { font-size: 50px; }
     .small-gear { width: 60px; }
-    
-    /* Chuyển về 1 cột */
     .interest-grid { grid-template-columns: 1fr; }
-    .interest-card p { min-height: auto; margin-bottom: 15px; }
     
-    /* Định dạng lại Hero Section: Gỡ absolute, xếp dọc các layer */
     .about-hero {
         height: auto;
         display: flex;
@@ -182,38 +223,18 @@
     }
     
     .layer {
-        position: relative;
+        position: relative !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
         transform: none !important;
-        width: 100%;
-        max-width: 500px; /* Giới hạn chiều rộng tối đa */
-        border: 3px solid #000; /* Hiển thị viền đồng đều khi xếp dọc */
+        width: 100% !important;
+        max-width: 500px;
+        border: 3px solid #303030 !important;
     }
     
-    .text-overlay { font-size: 24px; top: 10px; left: 10px; }
-}
-
-/* Màn hình Điện thoại lớn (max-width: 700px) */
-@media (max-width: 700px) {
-    .interest-section { padding: 40px 0; }
-    .section-heading h1 { font-size: 40px; }
-    .small-gear { width: 50px; }
-    .interest-card h3 { font-size: 28px; }
-    
-    .gray-box { height: 200px; }
-}
-
-/* Màn hình Điện thoại nhỏ (max-width: 480px) */
-@media (max-width: 480px) {
-    .section-heading h1 { font-size: 32px; }
-    .small-gear { width: 40px; }
-    .section-heading { gap: 10px; }
-    
-    .interest-card h3 { font-size: 24px; }
-    .interest-card p { font-size: 14px; }
-    
-    .text-overlay { font-size: 18px; }
+    .layer-portrait {
+        height: 380px !important;
+    }
 }
